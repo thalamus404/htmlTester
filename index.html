@@ -1,6 +1,30 @@
 <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Zähler Button</title>
+    <style>
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="countButton">Klick mich!</button>
+    <div id="counter">0</div>
 
-<title>This is the Title</title>
-
-<h1>This is the heading</h1>
-<button>This Button lol</button>
+    <script>
+        // JavaScript für die Logik
+        let count = 0; // Initialer Wert des Zählers
+        const counterElement = document.getElementById('counter');
+        const button = document.getElementById('countButton');
+        
+        button.onclick = function() {
+            count++; // Zähler erhöhen
+            counterElement.textContent = count; // Aktualisiere den Text des Zähler-Elements
+        };
+    </script>
+</body>
+</html>
