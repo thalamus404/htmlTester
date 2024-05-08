@@ -5,14 +5,20 @@
     <title>Einfacher Zähler</title>
 </head>
 <body>
-    <button id="countButton">Klick mich!</button>
-    <div id="counter">0</div>
-
+    <button id="countButton1">Klick mich!</button>
+    <div id="counter1">0</div>
+      <button id="countButton2">Klick mich!</button>
+    <div id="counter2">0</div>
     <script>
-        let count = 0;
-        document.getElementById('countButton').onclick = function() {
-            count++;
-            document.getElementById('counter').textContent = count;
+        let count1 = 0;
+        document.getElementById('countButton1').onclick = function() {
+            count1++;
+            document.getElementById('counter1').textContent = count1;
+        };
+        let count2 = 0;
+        document.getElementById('countButton2').onclick = function() {
+            count2++;
+            document.getElementById('counter2').textContent = count2;
         };
     </script>
 </body>
