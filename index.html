@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Einfacher Zähler</title>
+    <title>Dezimalzahlen Eingabe</title>
 </head>
 <body>
-    <button id="countButton1">Team1</button>
-    <div id="counter1">0</div>
-    <button id="countButton2">Team2</button>
-    <div id="counter2">0</div>
-    <button id="resetButton">Reset</button>
+    <input type="text" id="decimalInput" placeholder="Geben Sie eine Dezimalzahl ein">
+    <button onclick="processInput()">Berechnen</button>
+    <p id="output"></p>
+
     <script>
-        let count1 = 0;
-        document.getElementById('countButton1').onclick = function() {
-            count1++;
-            document.getElementById('counter1').textContent = count1;
-        };
-        let count2 = 0;
-        document.getElementById('countButton2').onclick = function() {
-            count2++;
-            document.getElementById('counter2').textContent = count2;
-        };
-        document.getElementById('resetButton').onclick = function() {
-            count1 = 0;
-            count2 = 0;
-            document.getElementById('counter1').textContent = count1;
-            document.getElementById('counter2').textContent = count2;
-        };
+        function processInput() {
+            let input = document.getElementById('decimalInput').value;
+
+            // Kommas durch Punkte ersetzen
+            input = input.replace(',', '.');
+
+            // In Float konvertieren
+            let number = parseFloat(input);
+
+            // Überprüfen, ob die Konvertierung erfolgreich war
+            if (isNaN(number)) {
+                document.getElementById('output').innerText = 'Ungültige Zahl';
+                return;
+            }
+
+            // Beispielrechnung: Zahl verdoppeln
+            let result = number * 2;
+
+            // Ergebnis anzeigen
+            document.getElementById('output').innerText = 'Das Ergebnis ist: ' + result;
+        }
     </script>
 </body>
 </html>
-
